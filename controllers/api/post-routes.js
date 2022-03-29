@@ -1,0 +1,1 @@
+// route that shows all claims made for a country/countries

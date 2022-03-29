@@ -1,0 +1,1 @@
+// route to be able to comment on a "claimed" country
