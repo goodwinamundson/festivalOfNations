@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Post, User, Comment } = require("../models");
+const { Post, User, Comment, Country } = require("../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
       "title",
       "post_content",
       "created_at",
-      "country",
+      "country", //??? or country_id?
       //   [
       //     sequelize.literal(
       //       "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
           "post_id",
           "user_id",
           "created_at",
-          "country",
+          "country", //??? or country_id?
         ],
         include: {
           model: User,

@@ -1,4 +1,3 @@
-//example from JTN
 
 const router = require("express").Router();
 const dashboardRoutes = require("./dashboard-routes.js");
