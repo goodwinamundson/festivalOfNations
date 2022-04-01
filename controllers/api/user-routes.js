@@ -24,37 +24,27 @@ router.get("/:id", (req, res) => {
         model: Post,
         attributes: [
           "id",
-          "title",
-          "post_url",
+          "user_id",
+          "username",
           "created_at",
-          // country_id ???
+          "country_name",
+          "location",
         ],
       },
       {
         model: Comment,
-        attributes: [
-          "id",
-          "comment_text",
-          "created_at",
-          // country_id ???
-        ],
+        attributes: ["id", "comment_text", "created_at"],
         include: {
           model: Post,
           attributes: ["title"],
         },
       },
-
-      // SHOULD COUNTRY MODEL BE INCLUDED ALSO?
+      // This may need to be modified to include the country name? or just changed completely?!
       {
         model: Post,
-        attributes: ["title"],
-
-        // IDK if this is correct! Most likely needs to be modified!
+        attributes: ["country_name"],
         through: Country,
-        as: "countries",
-
-        // through: Vote,
-        // as: "voted_posts",
+        as: "country",
       },
     ],
   })
@@ -77,14 +67,12 @@ router.post("/", (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    // country_id: req.body.country_id,??? DO WE CAPTURE COUNTRY ID HERE? AT CREATE USER?
   })
     .then((dbUserData) => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-        //req.session.country = dbUserData.country_id; ??? This might be entirely wrong!
 
         res.json(dbUserData);
       });
@@ -96,7 +84,6 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  // expects {email: 'user@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
       email: req.body.email,
@@ -118,7 +105,6 @@ router.post("/login", (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-      //req.session.country = dbUserData.country_id; ??? This might be entirely wrong!
 
       res.json({ user: dbUserData, message: "You are now logged in!" });
     });
@@ -155,7 +141,7 @@ router.put("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-// Would we add Country ID here so that way the countries available can then be updated?
+
 router.delete("/:id", (req, res) => {
   User.destroy({
     where: {

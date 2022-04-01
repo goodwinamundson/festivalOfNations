@@ -25,12 +25,11 @@ Comment.init(
         key: "id",
       },
     },
-    // should we/can we reference two models here?
+
     post_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "posts",
-        //model: 'country',
         key: "id",
       },
     },

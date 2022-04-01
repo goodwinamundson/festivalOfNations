@@ -1,6 +1,3 @@
-
-// Id, username, password, email, firstname, lastname, createdAt, updatedAt, 
-
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
@@ -21,14 +18,6 @@ User.init(
       autoIncrement: true,
     },
     username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    firstName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    lastName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
