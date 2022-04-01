@@ -75,7 +75,7 @@ const countryData = [
   },
   {
     country_name: "Colombia",
-    country_id: 19,
+    country_id: 19
   },
   {
     country_name: "Peru",

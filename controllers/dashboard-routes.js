@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, User, Comment, Country } = require("../../models");
+const { Post, User, Comment, Country } = require("../models");
 // const withAuth = require("../utils/auth");
 
 // get all posts for dashboard
