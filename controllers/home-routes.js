@@ -13,7 +13,8 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        // attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        // MAY NEED TO BE ADDED BACK IN LATER ALSO, WHERE IS COMMENT_TEXT?
+         //attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -23,6 +24,7 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      //MAY NEED TO BE ADDED BACK IN LATER
       // {
       //   model: Country,
       //   attributes: ["country_name"],
