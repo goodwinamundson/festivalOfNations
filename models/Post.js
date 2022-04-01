@@ -1,5 +1,41 @@
-// Post could represent the country claimed?
-// example: a country that has been claimed by a user and it is posted for others to see
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-// what attributes could Post have?
-// id, comment_text, country claimed( should the country be the title?), post_id?, created_at?, username, user_id
+// create Post model
+class Post extends Model {}
+
+Post.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+
+    country_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      primaryKey: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "post",
+  }
+);
+
+module.exports = Post;
