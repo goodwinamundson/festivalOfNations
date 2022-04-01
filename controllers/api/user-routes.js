@@ -63,6 +63,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   // expects {username: 'Samjam', email: 'example@gmail.com', password: 'password1234'}
+  console.log("test");
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -105,7 +106,7 @@ router.post("/login", (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-
+      console.log("succesful login");
       res.json({ user: dbUserData, message: "You are now logged in!" });
     });
   });
