@@ -1,5 +1,3 @@
-//may change
-
 async function signupFormHandler(event) {
   event.preventDefault();
 
