@@ -82,12 +82,12 @@ router.get("/:id", (req, res) => {
 
 router.post("/", withAuth, (req, res) => {
   Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.session.user_id,
-    username: req.session.username,
     country_name: req.body.country_name,
     location: req.body.location,
+    user_id: req.session.user_id,
+    username: req.session.username,
+    text_content: req.body.text_content,
+    
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -100,6 +100,7 @@ router.put("/:id", withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
+
     },
     {
       where: {
