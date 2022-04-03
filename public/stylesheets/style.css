@@ -97,7 +97,7 @@ header nav a:hover {
 /* content Style End */
 
 /*login form styles*/
-.login-form {
+.login-form, .content-form {
   border: solid 3px var(--tertiary-color);
   background-color: var(--primary-color);
   border-radius: 15px;
@@ -108,7 +108,7 @@ header nav a:hover {
   margin: 3.5%;
 }
 
-.login-form p {
+.login-form p, .content-form p {
   margin: 5px 0 15px 0;
 }
 
@@ -145,12 +145,12 @@ header nav a:hover {
   outline: none;
 }
 
-.login-form label {
+.login-form label, .content-form label {
   margin: 0 5px;
   padding-top: 10px;
 }
 
-.login-form button {
+.login-form button, .content-form button {
   color: var(--secondary-color);
   background-color: #ffffff;
   border: none;
@@ -159,7 +159,7 @@ header nav a:hover {
   font-size: 16px;
 }
 
-.login-form button:hover {
+.login-form button:hover, .content-form button:hover {
   background-color: var(--tertiary-color);
 }
 /*login form styles end*/
