@@ -1,0 +1,37 @@
+{{! originally single-claim-post: ALL THE ORIGINAL CODE WAS MOVED TO DASHBOARD.HANDLEBARS }}
+
+{{!-- MIGHT NEED TO BE EDITED --}}
+
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Post
+  </h2>
+  <form class="edit-post-form">
+    <div>
+      <label for="country">Country</label>
+      <input type="country" id="country" name="country" value="{{post.country}}" />
+    </div>
+    <div>
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+    <button type="submit">Save post</button>
+    <button type="button" class="delete-post-btn">Delete post</button>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Add Comment</button>
+  </div>
+</form>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>

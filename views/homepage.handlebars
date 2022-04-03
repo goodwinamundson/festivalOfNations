@@ -1,3 +1,5 @@
+{{! *** TUTOR HELP BELOW!*** }}
+
 <section class="content">
   <div class="content-cta">
     <h2>A Cultural Celebration!</h2>
@@ -16,7 +18,7 @@
       <label for="email-login">Enter email address:</label>
       <input
         type="text"
-        placeholder="Email Adress"
+        placeholder="Email Address"
         name="email"
         id="email-login"
         class="form-input"
@@ -33,7 +35,7 @@
     </form>
     <br />
 
-    <form>
+    <form class="signup-form">
       <label for="username-signup">Create a Username:</label>
       <input
         type="text"
@@ -58,9 +60,41 @@
         id="password-signup"
         class="form-input"
       />
+      {{! TUTOR HELP: BUTTON DOESN'T WORK }}
       <button type="submit">Sign Up!</button>
     </form>
   </div>
 </section>
 
 <script src="/javascript/login.js"></script>
+
+{{! TUTOR HELP?? THIS IS THE FORM FROM DEVELOP BRANCH THAT IS WORKING! : }}
+
+{{!-- <form class="signup-form">
+  <div>
+    <label for="username-signup">username:</label>
+    <input type="text" id="username-signup" />
+  </div>
+  <div>
+    <label for="email-signup">email:</label>
+    <input type="text" id="email-signup" />
+  </div>
+  <div>
+    <label for="password-signup">password:</label>
+    <input type="password" id="password-signup" />
+  </div>
+  {{! <div>
+    <label for="country">What country will you be representing?</label>
+    <input type="country" id="country-signup" />
+  </div>
+    <div>
+    <label for="how">Describe how you would like to participate</label>
+    <p>Give a brief description on what you would like to do to share your culture with your fellow employees. If you are sharing a food, please let the ingredients you will be using to help people with their dietary compliance.</p>
+    <input type="how" id="how-signup" />
+  </div> }}
+  <div>
+    <button type="submit">signup</button>
+  </div>
+</form>
+
+<script src="/javascript/login.js"></script> --}}

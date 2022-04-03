@@ -5,9 +5,9 @@
     <h2>What country will you be representing?</h2>
     <p>
       Give a brief description on what you would like to do to share your
-      culture with your fellow employees. If you are sharing a food, please
-      let the ingredients you will be using to help people with their
-      dietary compliance.
+      culture with your fellow employees. If you are sharing a food, please let
+      the ingredients you will be using to help people with their dietary
+      compliance.
     </p>
   </div>
 
@@ -16,26 +16,51 @@
     <p>Provide the information below to participate in the celebration.</p>
     <form>
       <label id="dropdown">Protolabs location:</label>
-        <select  name="location" id="location">
-          <option disabled selected value="">Select here</option>
-          <option value="BP">Brookyln Park</option>
-          <option value="HQ">HQ-Maple Plain</option>
-          <option value="Nashua">Nashua</option>
-          <option value="Plymouth">Plymouth</option>
-          <option value="Raleigh">Raleigh</option>
-          <option value="Rosemount">Rosemount</option>
-        </select>
+      <select name="location" id="location">
+        <option disabled selected value="">Select here</option>
+        <option value="BP">Brookyln Park</option>
+        <option value="HQ">HQ-Maple Plain</option>
+        <option value="Nashua">Nashua</option>
+        <option value="Plymouth">Plymouth</option>
+        <option value="Raleigh">Raleigh</option>
+        <option value="Rosemount">Rosemount</option>
+      </select>
 
-    <ol class="post-list">
+      <label for="country">Country:</label>
+      <select name="country" id="country">
+        <!--WE NEED AN ARRAY OF COUNTRIES HERE-->
+        {{#each countries as |country|}}
+          <a class="dropdown-item" href="#">{{country.country_name}}</a>
+        {{/each}}
+      </select>
+
+      <br />
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        placeholder="How will you share?"
+        name="description"
+        id="description"
+        class="description"
+      />
+      <br />
+
+      {{!  TUTOR HELP?? THIS BUTTON DOESN'T WORK }}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  {{! TUTOR HELP: NEED TO ADD IN LOCATION OF EVENTS AND COUNTRY HERE: beginning of events listing ON THE DASHBOARD }}
+  <ol class="post-list">
     {{#each posts as |post|}}
       <li>
         <article class="post">
           <div class="title">
-            <a href="{{country}}" target="_blank">{{post.title}}</a>
+            <a href="{{country}}" target="_blank">{{post.country}}</a>
             <span>({{country}})</span>
           </div>
           <div class="meta">
-            by
+
             {{post.user.username}}
             on
             {{post.created_at}}
@@ -46,46 +71,10 @@
       </li>
     {{/each}}
   </ol>
-
-      <label for="country">Country:</label>
-            <select name="country" id="country">
-                <!--WE NEED AN ARRAY OF COUNTRIES HERE-->
-            </select>
-
-    <br />
-      <label for="description">Description:</label>
-        <input
-          type="text"
-          placeholder="How will you share?"
-          name="description"
-          id="description"
-          class="description"
-        />
-        <br />
-        <button type="submit">Submit</button>
-    </form>
-  </div>
 </section>
 
+{{! THIS IS THE WORKING LOGIN CODE from develop branch: }}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{! OPTIONAL: DROP DOWN TO DISPLAY COUNTRIES }}
 {{!-- 
 <section>
   <h2>Register Your Country:</h2>
@@ -140,4 +129,4 @@
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script> --}}
+<script src="/javascript/add-post.js"></script> ----}}
