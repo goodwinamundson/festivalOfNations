@@ -10,15 +10,6 @@
   --tertiary-color: #343741;
 }
 
-/* body,
-html {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  color: #000000;
-} */
-
 body {
   color: var(--tertiary-color);
   font-family: Helvetica, Arial, sans-serif;
@@ -33,7 +24,6 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-image: url("../images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -77,9 +67,9 @@ header nav a:hover {
   text-shadow: none;
 }
 
-/*Body Styles*/
+/*content Styles*/
 
-.hero {
+.content {
   background-image: url("../stylesheets/Picture7.png");
   background-size: cover;
   background-attachment: fixed;
@@ -89,8 +79,24 @@ header nav a:hover {
   flex-wrap: wrap;
   align-items: flex-start;
 }
-/* Hero Style End */
 
+.content-cta2 h2 {
+  font-style: italic;
+  font-size: 40px;
+  padding: 0 90px;
+  color: var(--tertiary-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.content-cta2 p {
+  font-style: italic;
+  font-size: 18px;
+  padding: 0 80px;
+  color: var(--tertiary-color);
+}
+/* content Style End */
+
+/*login form styles*/
 .login-form {
   border: solid 3px var(--tertiary-color);
   background-color: var(--primary-color);
@@ -106,7 +112,7 @@ header nav a:hover {
   margin: 5px 0 15px 0;
 }
 
-.hero-cta {
+.content-cta {
   width: 35%;
   text-align: right;
   margin: 3.5%;
@@ -115,7 +121,7 @@ header nav a:hover {
   line-height: 1.2;
 }
 
-.hero-cta h2 {
+.content-cta h2 {
   font-style: italic;
   font-size: 55px;
   color: var(--tertiary-color);
@@ -156,22 +162,9 @@ header nav a:hover {
 .login-form button:hover {
   background-color: var(--tertiary-color);
 }
+/*login form styles end*/
 
-.hero-cta2 h2 {
-  font-style: italic;
-  font-size: 40px;
-  padding: 0 90px;
-  color: var(--tertiary-color);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero-cta2 p {
-  font-style: italic;
-  font-size: 18px;
-  padding: 0 80px;
-  color: var(--tertiary-color);
-}
-
+/*represent a country styles*/
 #location,
 #country {
   border: 1px solid var(--secondary-color);
@@ -209,6 +202,10 @@ header nav a:hover {
   background-color: #ffffff;
   outline: none;
 }
+/*represent a country styles End*/
+
+/*see all events styles*/
+/*see all events styles End*/
 
 /*Footer styles*/
 
