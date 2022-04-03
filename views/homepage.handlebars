@@ -1,20 +1,67 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-    <li>
-      <article class="post">
-        <div class="title">
-          <a href="{{country}}" target="_blank">{{post.title}}</a>
-          <span>({{country}})</span>
-        </div>
-        <div class="meta">
-          by
-          {{post.user.username}}
-          on
-          {{post.created_at}}
-          |
-          <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-        </div>
-      </article>
-    </li>
-  {{/each}}
-</ol>
+<section class="content">
+  <div class="content-cta">
+    <h2>A Cultural Celebration!</h2>
+    <p>
+      Celebrate cultures from around the globe with us on September 22,
+      2022, featuring your fellow employees. This is a great way to
+      celebrate each other the world we live in and the International Day of
+      Peace. If you would like to participate, fill out the sign up form and
+      get started!
+    </p>
+  </div>
+
+  <div class="login-form">
+    <h3>Join the Fun Today!</h3>
+    <p>Log in to adjust your entry, or sign up to participate below.</p>
+    <form>
+      <label for="email-login">Enter email address:</label>
+        <input
+          type="text"
+          placeholder="Email Adress"
+          name="email"
+          id="email-login"
+          class="form-input"
+        />
+      <label for="password-login">Enter password:</label>
+        <input
+          type="text"
+          placeholder="Password"
+          name="password"
+          id="password-login"
+          class="form-input"
+        />
+      <button type="submit">Log In</button>
+    </form>
+    <br />
+
+    <form>
+      <label for="username-signup">Create a Username:</label>
+        <input
+          type="text"
+          placeholder="Username"
+          name="username"
+          id="username-signup"
+          class="form-input"
+        />
+      <label for="email-signup">Enter email address:</label>
+        <input
+          type="text"
+          placeholder="Email Adress"
+          name="email"
+          id="email-signup"
+          class="form-input"
+        />
+      <label for="password-signup">Enter password:</label>
+        <input
+          type="text"
+          placeholder="Password"
+          name="password"
+          id="password-signup"
+          class="form-input"
+        />
+      <button type="submit">Sign Up!</button>
+    </form>
+  </div>
+</section>
+
+<script src="/javascript/login.js"></script>
