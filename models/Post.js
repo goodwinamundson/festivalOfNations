@@ -12,7 +12,15 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    // which country_name would be best to use?
 
+    // country_name: {
+    //   type: DataTypes.STRING,
+    //   references: {
+    //     model: "country",
+    //     key: "id",
+    //   },
+    // },
     country_name: {
       type: DataTypes.STRING,
       allowNull: false,

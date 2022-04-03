@@ -7,8 +7,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        // MAY NEED TO BE ADDED BACK IN LATER ALSO, WHERE IS COMMENT_TEXT?
-        //attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "comment", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -42,6 +41,7 @@ router.get("/", (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
+    // place .sendMail() in here!
     res.redirect("/");
     return;
   }
