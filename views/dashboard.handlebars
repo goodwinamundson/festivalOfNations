@@ -1,9 +1,14 @@
-<section class="content">
-  <div class="content-cta2">
-    <h2>All Events</h2>
-      </div>
-</section>
+{{! this is where the user can REGISTER their country and their post will show below!!  }}
 
+{{! OPTIONAL: DROP DOWN TO DISPLAY COUNTRIES }}
+
+<section>
+  <h2>Register Your Country:</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="country_name">Enter Your Country</label>
+      <input type="text" id="country_name" name="country_name" />
 <div class="dropdown">
   <button
     class="btn btn-secondary dropdown-toggle"
@@ -13,7 +18,7 @@
     aria-haspopup="true"
     aria-expanded="false"
   >
-    Dropdown button
+    Countries Dropdown Menu
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     {{#each countries as |country|}}
@@ -22,3 +27,32 @@
 
   </div>
 </div>
+
+    </div>
+    <div>
+      <label for="location">Festival Location</label>
+      <input id="location" name="location" />
+    </div>
+      <div>
+      <label for="description">Description</label>
+      <input id="description" name="description" />
+    </div>
+    <button type="submit" class="btn">Register Your Country</button>
+  </form>
+</section>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Event</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
