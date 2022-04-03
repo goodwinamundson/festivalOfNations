@@ -14,7 +14,7 @@
       <h1>Festival of Nations</h1>
       <nav>
         {{#if loggedIn}}
-        <a href="../dashboard.handlebars">See All Events</a>
+        <a href="/dashboard">See All Events</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login">login</a>
@@ -22,9 +22,28 @@
       </nav>
     </header>
     <main>
+    <section class="hero">
+      <div class="hero-cta">
+        <h2>A Cultural Celebration!</h2>
+        <p>
+          Celebrate cultures from around the globe with us on September 22,
+          2022, featuring your fellow employees. This is a great way to
+          celebrate each other the world we live in and the International Day of
+          Peace. If you would like to participate, fill out the sign up form and
+          get started!
+        </p>
+      </div>
+    </section>
       {{{ body }}}
     </main>
-    <footer></footer>
+      <footer>
+        <a href="https://www.protolabs.com/" target="_blank">
+          <img src="Picture1.png" alt="Protolabs" />
+        </a>
+        <div class="footerEmail">
+          <a href= "mailto: deileadershipcouncil@protolabs.com">Contact Us</a>
+        </div>
+      </footer>
   </div>
   
   {{#if loggedIn}}
