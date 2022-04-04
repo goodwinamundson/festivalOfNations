@@ -214,6 +214,9 @@ header nav a:hover {
 
 footer {
   background-color: var(--tertiary-color);
+  position:absolute;
+  width: 100%;
+  bottom:0;
 }
 
 footer img {

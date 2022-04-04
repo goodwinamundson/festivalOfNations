@@ -16,7 +16,7 @@
       <label id="dropdown">Protolabs location:</label>
         <select  name="location" id="location">
           <option disabled selected value="">Select here</option>
-          <option value="BP">Brookyln Park</option>
+          <option value="BP">Brooklyn Park</option>
           <option value="HQ">HQ-Maple Plain</option>
           <option value="Nashua">Nashua</option>
           <option value="Plymouth">Plymouth</option>
@@ -44,7 +44,16 @@
         <br />
         <button type="submit">Submit</button>
     </form>
-  </div>
+ </div>
+ <div>
+    {{#each posts as |post|}}
+    <div>
+    <p>{{post.country_name}}; <span style="color:{{post.location_color}}">{{post.location}}</span></p>
+    <p>{{post.description}}</p>
+    </div>
+    {{/each}}
+ </div>
+ 
 
   <script src="/javascript/create-post.js"></script>
 

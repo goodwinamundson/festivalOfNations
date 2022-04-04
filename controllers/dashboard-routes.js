@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Post, User, Comment, Country } = require("../models");
 //withAuth will need to be added again as well
-// const withAuth = require("../utils/auth");
+//const withAuth = require("../../utils/auth");
 
 // get all posts for dashboard
 router.get("/", (req, res) => {
@@ -41,6 +41,14 @@ router.get("/", (req, res) => {
   })
     .then((dbPostData) => {
       posts = dbPostData.map((post) => post.get({ plain: true }));
+      posts = posts.map(function (post) {
+        if (post.location === "Brooklyn Park") {
+          post.location_color = "red";
+        } else {
+          post.location_color = "black";
+        }
+        return post;
+      });
       return Country.findAll({});
     })
     .then((dbCountryData) => {

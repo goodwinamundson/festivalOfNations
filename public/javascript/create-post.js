@@ -8,12 +8,13 @@ async function newFormHandler(event) {
   let country = countryEl.options[countryEl.selectedIndex].textContent;
 
   const description = document.querySelector('input[name="description"]').value;
+  console.log(country, location, description)
 
   const response = await fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
       location,
-      country,
+      country_name: country,
       description,
     }),
     headers: {
