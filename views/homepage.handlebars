@@ -1,12 +1,13 @@
+{{! *** TUTOR HELP BELOW!*** }}
+
 <section class="content">
   <div class="content-cta">
     <h2>A Cultural Celebration!</h2>
     <p>
-      Celebrate cultures from around the globe with us on September 22,
-      2022, featuring your fellow employees. This is a great way to
-      celebrate each other the world we live in and the International Day of
-      Peace. If you would like to participate, fill out the sign up form and
-      get started!
+      Celebrate cultures from around the globe with us on September 22, 2022,
+      featuring your fellow employees. This is a great way to celebrate each
+      other the world we live in and the International Day of Peace. If you
+      would like to participate, fill out the sign up form and get started!
     </p>
   </div>
 
@@ -15,52 +16,85 @@
     <p>Log in to adjust your entry, or sign up to participate below.</p>
     <form class="login-form">
       <label for="email-login">Enter email address:</label>
-        <input
-          type="text"
-          placeholder="Email Adress"
-          name="email"
-          id="email-login"
-          class="form-input"
-        />
+      <input
+        type="text"
+        placeholder="Email Address"
+        name="email"
+        id="email-login"
+        class="form-input"
+      />
       <label for="password-login">Enter password:</label>
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          id="password-login"
-          class="form-input"
-        />
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        id="password-login"
+        class="form-input"
+      />
       <button type="submit">Log In</button>
       </form>
     <br />
-     <form class="signup-form">
+
+    <form class="signup-form">
       <label for="username-signup">Create a Username:</label>
-        <input
-          type="text"
-          placeholder="Username"
-          name="username"
-          id="username-signup"
-          class="form-input"
-        />
+      <input
+        type="text"
+        placeholder="Username"
+        name="username"
+        id="username-signup"
+        class="form-input"
+      />
       <label for="email-signup">Enter email address:</label>
-        <input
-          type="text"
-          placeholder="Email Adress"
-          name="email"
-          id="email-signup"
-          class="form-input"
-        />
+      <input
+        type="text"
+        placeholder="Email Adress"
+        name="email"
+        id="email-signup"
+        class="form-input"
+      />
       <label for="password-signup">Enter password:</label>
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          id="password-signup"
-          class="form-input"
-        />
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        id="password-signup"
+        class="form-input"
+      />
+      {{! TUTOR HELP: BUTTON DOESN'T WORK }}
       <button type="submit">Sign Up!</button>
     </form>
   </div>
 </section>
 
 <script src="/javascript/login.js"></script>
+
+{{! TUTOR HELP?? THIS IS THE FORM FROM DEVELOP BRANCH THAT IS WORKING! : }}
+
+{{!-- <form class="signup-form">
+  <div>
+    <label for="username-signup">username:</label>
+    <input type="text" id="username-signup" />
+  </div>
+  <div>
+    <label for="email-signup">email:</label>
+    <input type="text" id="email-signup" />
+  </div>
+  <div>
+    <label for="password-signup">password:</label>
+    <input type="password" id="password-signup" />
+  </div>
+  {{! <div>
+    <label for="country">What country will you be representing?</label>
+    <input type="country" id="country-signup" />
+  </div>
+    <div>
+    <label for="how">Describe how you would like to participate</label>
+    <p>Give a brief description on what you would like to do to share your culture with your fellow employees. If you are sharing a food, please let the ingredients you will be using to help people with their dietary compliance.</p>
+    <input type="how" id="how-signup" />
+  </div> }}
+  <div>
+    <button type="submit">signup</button>
+  </div>
+</form>
+
+<script src="/javascript/login.js"></script> --}}

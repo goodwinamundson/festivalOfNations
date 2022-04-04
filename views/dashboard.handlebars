@@ -1,28 +1,103 @@
- <section class="content">
+{{! this is where the user can REGISTER their country and their post will show below!!  }}
+
+<section class="content">
   <div class="content-cta2">
     <h2>What country will you be representing?</h2>
     <p>
       Give a brief description on what you would like to do to share your
-      culture with your fellow employees. If you are sharing a food, please
-      let the ingredients you will be using to help people with their
-      dietary compliance.
+      culture with your fellow employees. If you are sharing a food, please let
+      the ingredients you will be using to help people with their dietary
+      compliance.
     </p>
-  </div> 
-  
+  </div>
+
   <div class="content-form">
     <h3>Represent a Country!</h3>
     <p>Provide the information below to participate in the celebration.</p>
     <form>
       <label id="dropdown">Protolabs location:</label>
-        <select  name="location" id="location">
-          <option disabled selected value="">Select here</option>
-          <option value="BP">Brookyln Park</option>
-          <option value="HQ">HQ-Maple Plain</option>
-          <option value="Nashua">Nashua</option>
-          <option value="Plymouth">Plymouth</option>
-          <option value="Raleigh">Raleigh</option>
-          <option value="Rosemount">Rosemount</option>
-        </select>
+      <select name="location" id="location">
+        <option disabled selected value="">Select here</option>
+        <option value="BP">Brookyln Park</option>
+        <option value="HQ">HQ-Maple Plain</option>
+        <option value="Nashua">Nashua</option>
+        <option value="Plymouth">Plymouth</option>
+        <option value="Raleigh">Raleigh</option>
+        <option value="Rosemount">Rosemount</option>
+      </select>
+
+      <label for="country">Country:</label>
+      <select name="country" id="country">
+        <!--WE NEED AN ARRAY OF COUNTRIES HERE-->
+        {{#each countries as |country|}}
+          <a class="dropdown-item" href="#">{{country.country_name}}</a>
+        {{/each}}
+      </select>
+
+      <br />
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        placeholder="How will you share?"
+        name="description"
+        id="description"
+        class="description"
+      />
+      <br />
+
+      {{!  TUTOR HELP?? THIS BUTTON DOESN'T WORK }}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  {{! TUTOR HELP: NEED TO ADD IN LOCATION OF EVENTS AND COUNTRY HERE: beginning of events listing ON THE DASHBOARD }}
+  <ol class="post-list">
+    {{#each posts as |post|}}
+      <li>
+        <article class="post">
+          <div class="title">
+            <a href="{{country}}" target="_blank">{{post.country}}</a>
+            <span>({{country}})</span>
+          </div>
+          <div class="meta">
+
+            {{post.user.username}}
+            on
+            {{post.created_at}}
+            |
+            <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+          </div>
+        </article>
+      </li>
+    {{/each}}
+  </ol>
+</section>
+
+{{! THIS IS THE WORKING LOGIN CODE from develop branch: }}
+
+{{!-- 
+<section>
+  <h2>Register Your Country:</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="country_name">Enter Your Country</label>
+      <input type="text" id="country_name" name="country_name" />
+<div class="dropdown">
+  <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    Countries Dropdown Menu
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    {{#each countries as |country|}}
+      <a class="dropdown-item" href="#">{{country.country_name}}</a>
+    {{/each}}
 
       <label for="country">Country:</label>
             <select name="country" id="country">
@@ -43,4 +118,33 @@
         <button type="submit">Submit</button>
     </form>
   </div>
+</div>
+
+    </div>
+    <div>
+      <label for="location">Festival Location</label>
+      <input id="location" name="location" />
+    </div>
+      <div>
+      <label for="description">Description</label>
+      <input id="description" name="description" />
+    </div>
+    <button type="submit" class="btn">Register Your Country</button>
+  </form>
 </section>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Event</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script> ----
