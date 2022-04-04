@@ -1,24 +1,46 @@
-<section class="content">
+ <section class="content">
   <div class="content-cta2">
-    <h2>All Events</h2>
-      </div>
-</section>
+    <h2>What country will you be representing?</h2>
+    <p>
+      Give a brief description on what you would like to do to share your
+      culture with your fellow employees. If you are sharing a food, please
+      let the ingredients you will be using to help people with their
+      dietary compliance.
+    </p>
+  </div> 
+  
+  <div class="content-form">
+    <h3>Represent a Country!</h3>
+    <p>Provide the information below to participate in the celebration.</p>
+    <form>
+      <label id="dropdown">Protolabs location:</label>
+        <select  name="location" id="location">
+          <option disabled selected value="">Select here</option>
+          <option value="BP">Brookyln Park</option>
+          <option value="HQ">HQ-Maple Plain</option>
+          <option value="Nashua">Nashua</option>
+          <option value="Plymouth">Plymouth</option>
+          <option value="Raleigh">Raleigh</option>
+          <option value="Rosemount">Rosemount</option>
+        </select>
 
-<div class="dropdown">
-  <button
-    class="btn btn-secondary dropdown-toggle"
-    type="button"
-    id="dropdownMenuButton"
-    data-toggle="dropdown"
-    aria-haspopup="true"
-    aria-expanded="false"
-  >
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    {{#each countries as |country|}}
-      <a class="dropdown-item" href="#">{{country.country_name}}</a>
-    {{/each}}
-
+      <label for="country">Country:</label>
+            <select name="country" id="country">
+              {{#each countries as |country|}}
+                <a class="dropdown-item" href="#">{{country.country_name}}</a>
+              {{/each}}
+            </select>
+<br />
+      <label for="description">Description:</label>
+        <input
+          type="text"
+          placeholder="How will you share?"
+          name="description"
+          id="description"
+          class="description"
+        />
+        <br />
+        <button type="submit">Submit</button>
+    </form>
   </div>
-</div>
+</section>
