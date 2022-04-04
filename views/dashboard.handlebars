@@ -14,7 +14,7 @@
   <div class="content-form">
     <h3>Represent a Country!</h3>
     <p>Provide the information below to participate in the celebration.</p>
-    <form>
+    <form class="new-post-form">
       <label id="dropdown">Protolabs location:</label>
       <select name="location" id="location">
         <option disabled selected value="">Select here</option>
@@ -30,7 +30,7 @@
       <select name="country" id="country">
         <!--WE NEED AN ARRAY OF COUNTRIES HERE-->
         {{#each countries as |country|}}
-          <a class="dropdown-item" href="#">{{country.country_name}}</a>
+          <option class="dropdown-item" href="#">{{country.country_name}}</option>
         {{/each}}
       </select>
 
@@ -50,8 +50,10 @@
     </form>
   </div>
 
+  <script src="/javascript/create-post.js"></script>
+
   {{! TUTOR HELP: NEED TO ADD IN LOCATION OF EVENTS AND COUNTRY HERE: beginning of events listing ON THE DASHBOARD }}
-  <ol class="post-list">
+  {{!-- <ol class="post-list">
     {{#each posts as |post|}}
       <li>
         <article class="post">
@@ -70,7 +72,7 @@
         </article>
       </li>
     {{/each}}
-  </ol>
+  </ol> --}}
 </section>
 
 {{! THIS IS THE WORKING LOGIN CODE from develop branch: }}
@@ -78,7 +80,6 @@
 {{!-- 
 <section>
   <h2>Register Your Country:</h2>
-
   <form class="new-post-form">
     <div>
       <label for="country_name">Enter Your Country</label>
@@ -98,10 +99,8 @@
     {{#each countries as |country|}}
       <a class="dropdown-item" href="#">{{country.country_name}}</a>
     {{/each}}
-
   </div>
 </div>
-
     </div>
     <div>
       <label for="location">Festival Location</label>
@@ -114,7 +113,6 @@
     <button type="submit" class="btn">Register Your Country</button>
   </form>
 </section>
-
 {{#if posts.length}}
 <section>
   <h2>Your Event</h2>
@@ -128,5 +126,4 @@
   </ol>
 </section>
 {{/if}}
-
-<script src="/javascript/add-post.js"></script> ----}}
+ ----}}
