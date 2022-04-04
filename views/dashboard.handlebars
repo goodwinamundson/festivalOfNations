@@ -45,10 +45,10 @@
         <button type="submit">Submit</button>
     </form>
  </div>
- <div>
+ <div class="post-card">
     {{#each posts as |post|}}
-    <div>
-    <p>{{post.country_name}}; <span style="color:{{post.location_color}}">{{post.location}}</span></p>
+    <div class="single-post">
+    <p><span style="color:{{post.location_color}}">{{post.location}}</span>; {{post.country_name}};</p>
     <p>{{post.description}}</p>
     </div>
     {{/each}}
