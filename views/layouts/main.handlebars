@@ -1,43 +1,43 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Festival of Nations</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festival of Nations</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<body>
-  <div class="wrapper">
-    <header>
-      <h1>Festival of Nations</h1>
-      <nav>
-        {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">logout</button>
-        <a href="/homepage">login</a>
-        <a href="/all-events">See All Events</a>
-        {{else}}
-        {{/if}}
-      </nav>
-    </header>
-    <main>
-      <section class="content"></section>
-      {{{ body }}}
-    </main>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Festival of Nations</h1>
+        <nav>
+          {{#if loggedIn}}
+            <button id="logout" class="btn-no-style">logout</button>
+            <a href="/dashboard">See All Events - aka Dashboard</a>
+            <a href="/login">login</a>
+          {{else}}
+
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+        <section class="content"></section>
+        {{{body}}}
+      </main>
       <footer>
         <a href="https://www.protolabs.com/" target="_blank">
           <img src="Picture1.png" alt="Protolabs" />
         </a>
         <div class="footerEmail">
-          <a href= "mailto: deileadershipcouncil@protolabs.com">Contact Us</a>
+          <a href="mailto: deileadershipcouncil@protolabs.com">Contact Us</a>
         </div>
       </footer>
-  </div>
-  
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
-</body>
+    </div>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>
