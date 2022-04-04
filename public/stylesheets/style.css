@@ -86,30 +86,21 @@ header nav a:hover {
   padding: 0 90px;
   color: var(--tertiary-color);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}   
+  
+.content-cta h2 {
+    font-style: italic;
+    font-size: 55px;
+    color: var(--tertiary-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 
 .content-cta2 p {
   font-style: italic;
   font-size: 18px;
   padding: 0 80px;
   color: var(--tertiary-color);
-}
-/* content Style End */
-
-/*login form styles*/
-.login-form, .content-form {
-  border: solid 3px var(--tertiary-color);
-  background-color: var(--primary-color);
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  color: var(--tertiary-color);
-  width: 40%;
-  margin: 3.5%;
-}
-
-.login-form p, .content-form p {
-  margin: 5px 0 15px 0;
 }
 
 .content-cta {
@@ -121,11 +112,23 @@ header nav a:hover {
   line-height: 1.2;
 }
 
-.content-cta h2 {
-  font-style: italic;
-  font-size: 55px;
+
+/* content Style End */
+
+/*login form styles*/
+.content-form {
+  border: solid 3px var(--tertiary-color);
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
   color: var(--tertiary-color);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 40%;
+  margin: 3.5%;
+}
+
+.content-form p {
+  margin: 5px 0 15px 0;
 }
 
 .form-input {
@@ -145,12 +148,12 @@ header nav a:hover {
   outline: none;
 }
 
-.login-form label, .content-form label {
+.content-form label {
   margin: 0 5px;
   padding-top: 10px;
 }
 
-.login-form button, .content-form button {
+.content-form button {
   color: var(--secondary-color);
   background-color: #ffffff;
   border: none;
@@ -159,7 +162,7 @@ header nav a:hover {
   font-size: 16px;
 }
 
-.login-form button:hover, .content-form button:hover {
+.content-form button:hover {
   background-color: var(--tertiary-color);
 }
 /*login form styles end*/
