@@ -1,27 +1,19 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  // const country_name = document.querySelector(
-  //   'input[name="country_name"]'
-  // ).value;
+  let locationEl = document.querySelector("#location");
+  let location = locationEl.options[locationEl.selectedIndex].textContent;
 
   let countryEl = document.querySelector("#country");
   let country = countryEl.options[countryEl.selectedIndex].textContent;
-
-  // const festival_loocation"]'
-  // ).value; location = document.querySelector(
-  //   'input[name="l
-
-  let locationEl = document.querySelector("#location");
-  let location = locationEl.options[locationEl.selectedIndex].textContent;
 
   const description = document.querySelector('input[name="description"]').value;
 
   const response = await fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
-      country,
       location,
+      country,
       description,
     }),
     headers: {
