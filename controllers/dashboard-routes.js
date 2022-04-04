@@ -7,45 +7,52 @@ const { Post, User, Comment, Country } = require("../models");
 router.get("/", (req, res) => {
   console.log(req.session);
   console.log("======================");
-    Post.findAll({
-      where: {
-        user_id: req.session.user_id,
-      },
-      // attributes: [
-      //   "id",
-      //   "user_id",
-      //   "username",
-      //   "created_at",
-      //   "country_name",
-      //   "location",
-      // ],
-      // include: [
-      //   {
-      //     model: Comment,
-      //     attributes: ["id", "comment", "post_id", "username", "created_at"],
-      //     include: {
-      //       model: User,
-      //       attributes: ["username"],
-      //     },
-      //   },
-      //   {
-      //     model: User,
-      //     attributes: ["username"],
-      //   },
-        // {
-        //   model: Country,
-        //   attributes: ["country_name"],
-        // },
-      // ],
+  let posts = [];
+  Post.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+    // attributes: [
+    //   "id",
+    //   "user_id",
+    //   "username",
+    //   "created_at",
+    //   "country_name",
+    //   "location",
+    // ],
+    // include: [
+    //   {
+    //     model: Comment,
+    //     attributes: ["id", "comment", "post_id", "username", "created_at"],
+    //     include: {
+    //       model: User,
+    //       attributes: ["username"],
+    //     },
+    //   },
+    //   {
+    //     model: User,
+    //     attributes: ["username"],
+    //   },
+    // {
+    //   model: Country,
+    //   attributes: ["country_name"],
+    // },
+    // ],
+  })
+    .then((dbPostData) => {
+      posts = dbPostData.map((post) => post.get({ plain: true }));
+      return Country.findAll({});
     })
-      .then((dbPostData) => {
-        const posts = dbPostData.map((post) => post.get({ plain: true }));
-  res.render("dashboard", { posts: [], loggedIn: true });
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+    .then((dbCountryData) => {
+      const countries = dbCountryData.map((country) =>
+        country.get({ plain: true })
+      );
+      res.render("dashboard", { posts, countries, loggedIn: true });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.get("/edit/:id", (req, res) => {

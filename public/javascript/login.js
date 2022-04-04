@@ -14,10 +14,13 @@ async function loginFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
 
+    const result = await response.json();
+    console.log(result);
+
     if (response.ok) {
       document.location.replace("/dashboard/");
     } else {
-      alert(response.statusText);
+      alert(result.errors[0].message);
     }
   }
 }
@@ -40,11 +43,14 @@ async function signupFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
 
+    const result = await response.json();
+    console.log(result);
+
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard/");
       console.log("success");
     } else {
-      alert(response.statusText);
+      alert(result.errors[0].message);
     }
   }
 }
