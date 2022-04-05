@@ -78,15 +78,15 @@ router.get("/edit/:id", (req, res) => {
     attributes: [
       "id",
       "user_id",
-      "username",
       "created_at",
       "country_name",
       "location",
+      "description",
     ],
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment", "post_id", "username", "created_at"],
+        attributes: ["id", "comment", "post_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -96,16 +96,16 @@ router.get("/edit/:id", (req, res) => {
         model: User,
         attributes: ["username"],
       },
-      {
-        model: Country,
-        attributes: ["country_name"],
-      },
+      // {
+      //   model: Country,
+      //   attributes: ["country_name"],
+      // },
     ],
   })
     .then((dbPostData) => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
-
+        console.log(post);
         res.render("edit-post", {
           post,
           loggedIn: true,

@@ -97,9 +97,12 @@ router.post("/", withAuth, (req, res) => {
 });
 
 router.put("/:id", withAuth, (req, res) => {
+  console.log(req.body);
   Post.update(
     {
-      title: req.body.title,
+      country_name: req.body.country,
+      location: req.body.location,
+      description: req.body.description,
     },
     {
       where: {
@@ -112,6 +115,7 @@ router.put("/:id", withAuth, (req, res) => {
         res.status(404).json({ message: "Sorry, no post found with this id" });
         return;
       }
+      console.log(dbPostData);
       res.json(dbPostData);
     })
     .catch((err) => {
