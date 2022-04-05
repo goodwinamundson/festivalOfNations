@@ -31,10 +31,10 @@ Country.belongsTo(Post, {
   onDelete: "SET NULL",
 });
 
-User.belongsTo(Post, {
-  foreignKey: "post_id",
-  onDelete: "SET NULL",
-});
+// User.belongsTo(Post, {
+//   foreignKey: "post_id",
+//   onDelete: "SET NULL",
+// });
 
 //this might be incorrect!
 // Country.belongsTo(User, {

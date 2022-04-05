@@ -24,7 +24,7 @@ Post.init(
     country_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
+      primaryKey: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -36,6 +36,11 @@ Post.init(
     location: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      primaryKey: false,
     },
   },
   {

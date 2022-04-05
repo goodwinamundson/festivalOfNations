@@ -8,10 +8,13 @@ async function deleteFormHandler(event) {
     method: "DELETE",
   });
 
+  const result = await response.json();
+  console.log(result);
+
   if (response.ok) {
     document.location.replace("/dashboard/");
   } else {
-    alert(response.statusText);
+    alert(result.errors[0].message);
   }
 }
 

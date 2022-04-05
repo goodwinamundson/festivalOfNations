@@ -1,19 +1,24 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const country_name = document.querySelector(
-    'input[name="country_name"]'
-  ).value;
-  const festival_location = document.querySelector(
-    'input[name="location"]'
-  ).value;
+//i don't think this is username is correct
+  let username = document.querySelector("#username-signup");
+
+  let locationEl = document.querySelector("#location");
+  let location = locationEl.options[locationEl.selectedIndex].textContent;
+
+  let countryEl = document.querySelector("#country");
+  let country = countryEl.options[countryEl.selectedIndex].textContent;
+
   const description = document.querySelector('input[name="description"]').value;
+  console.log(country, location, description);
 
   const response = await fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
-      country_name,
-      festival_location,
+      username,
+      location,
+      country_name: country,
       description,
     }),
     headers: {
@@ -21,10 +26,13 @@ async function newFormHandler(event) {
     },
   });
 
+  const result = await response.json();
+  console.log(result);
+
   if (response.ok) {
     document.location.replace("/dashboard");
   } else {
-    alert(response.statusText);
+    alert(result.errors[0].message);
   }
 }
 

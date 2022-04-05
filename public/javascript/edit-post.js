@@ -15,10 +15,13 @@ async function editFormHandler(event) {
     },
   });
 
+  const result = await response.json();
+  console.log(result);
+
   if (response.ok) {
-    document.location.replace("/dashboard/");
+    document.location.replace("/dashboard");
   } else {
-    alert(response.statusText);
+    alert(result.errors[0].message);
   }
 }
 
