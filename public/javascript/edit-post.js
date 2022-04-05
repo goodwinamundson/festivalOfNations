@@ -19,7 +19,7 @@ async function editFormHandler(event) {
   console.log(result);
 
   if (response.ok) {
-    document.location.replace("/dashboard/");
+    document.location.replace("/dashboard");
   } else {
     alert(result.errors[0].message);
   }

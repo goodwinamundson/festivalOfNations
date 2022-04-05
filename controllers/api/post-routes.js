@@ -85,7 +85,7 @@ router.post("/", withAuth, (req, res) => {
     description: req.body.description,
     //post_url: req.body.post_url,
     user_id: req.session.user_id,
-    //username: req.session.username,
+    username: req.session.username,
     country_name: req.body.country_name,
     location: req.body.location,
   })

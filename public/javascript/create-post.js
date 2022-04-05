@@ -1,6 +1,9 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
+//i don't think this is username is correct
+  let username = document.querySelector("#username-signup");
+
   let locationEl = document.querySelector("#location");
   let location = locationEl.options[locationEl.selectedIndex].textContent;
 
@@ -8,11 +11,12 @@ async function newFormHandler(event) {
   let country = countryEl.options[countryEl.selectedIndex].textContent;
 
   const description = document.querySelector('input[name="description"]').value;
-  console.log(country, location, description)
+  console.log(country, location, description);
 
   const response = await fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
+      username,
       location,
       country_name: country,
       description,
