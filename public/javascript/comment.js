@@ -1,19 +1,19 @@
 async function commentFormHandler(event) {
   event.preventDefault();
 
-  const comment_text = document
+  const comments = document
     .querySelector('textarea[name="comment-body"]')
     .value.trim();
   const post_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
 
-  if (comment_text) {
+  if (comments.length) {
     const response = await fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({
         post_id,
-        comment_text,
+        comment,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,10 @@ async function commentFormHandler(event) {
     console.log(result);
 
     if (response.ok) {
-      document.location.reload();
+      //document.location.reload();
+
+      res.render("dashboard", { countries });
+      document.location.replace("/dashboard");
     } else {
       alert(result.errors[0].message);
     }
