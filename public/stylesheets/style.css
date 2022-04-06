@@ -130,7 +130,7 @@ header nav button:hover {
 /* content Style End */
 
 /*login form styles*/
-.content-form {
+.content-form  {
   border: solid 3px var(--tertiary-color);
   background-color: var(--primary-color);
   border-radius: 15px;
@@ -145,7 +145,7 @@ header nav button:hover {
   margin: 5px 0 15px 0;
 }
 
-.form-input {
+.form-input, #description, #commentBody {
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   display: block;
@@ -162,12 +162,12 @@ header nav button:hover {
   outline: none;
 }
 
-.content-form label {
+.content-form label, .edit-post-form label {
   margin: 0 5px;
   padding-top: 10px;
 }
 
-.content-form button {
+.content-form button, .edit-post-form button {
   color: var(--secondary-color);
   background-color: #ffffff;
   border: none;
@@ -176,7 +176,7 @@ header nav button:hover {
   font-size: 16px;
 }
 
-.content-form button:hover {
+.content-form button:hover, .edit-post-form button:hover {
   background-color: var(--tertiary-color);
 }
 /*login form styles end*/
@@ -222,9 +222,7 @@ header nav button:hover {
 /*represent a country styles End*/
 
 /*see all events styles*/
-.comment-body{
-  padding-top: 5px;
-}
+
 
 /*see all events styles End*/
 
