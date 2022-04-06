@@ -10,7 +10,9 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
+  * [Technology](#technology)
   * [Contributors](#contributors)
+  * [Credits](#credits)
   
   
   ## Installation 
@@ -43,11 +45,12 @@
 
 
   ## Usage 
-  To run the program just type npm start in the command line and then navigate to localhost:3030 in your browser or simply visit the live website [here](https://dashboard.heroku.com/auth/heroku/callback?code=54061cc7-68e5-41d8-bba1-d8f80a5abc24&state=02b0a20f563a9c1821a47ba81cc5b21ded02716ded2ac1fbc5c4add119910c02) (!LIVE LINK STILL NEEDED!). 
+  To run the program just type npm start in the command line and then navigate to localhost:3030 in your browser or simply visit the live website [here](https://dashboard.heroku.com/auth/heroku/callback?code=54061cc7-68e5-41d8-bba1-d8f80a5abc24&state=02b0a20f563a9c1821a47ba81cc5b21ded02716ded2ac1fbc5c4add119910c02). 
 
   Once a user arrives at the landing page they will be able to sign up or log in to their account. From there they will be redirected to a page where they will be able to create a post. If they do not wish to create a post the user can click 'See All Events' where they can view and comment on all the posts from other users.
 ![Sign up page](./views/images/sign-up.png)
 ![Create Post](./views/images/create-post.png)
+![Dashboard Page](./views/images/dashboard.png)
 
   ## Technology
   node modules used:
@@ -57,6 +60,7 @@
   * [express](https://www.npmjs.com/package/express)
   * [handlebars](https://www.npmjs.com/package/handlebars)
   * [mysql](https://www.npmjs.com/package/mysql)
+  * [nodemailer-sendgrid](https://www.npmjs.com/package/nodemailer-sendgrid)
 
 
 
@@ -74,6 +78,13 @@
   Paul Gottinger [Github](https://github.com/PRGottinger) [Email](paul.gottinger@gmail.com)
 
   Goodwin Amundson [Github](https://github.com/goodwinamundson) [Email](goodwinamundson@gmail.com)
+
+  ## Credits
+  We used inspiration for our code from some of previous projects including:
+  * just-tech-news
+  * run-buddy
+  * readme-generator 
+
 
 
 
