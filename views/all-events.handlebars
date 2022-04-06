@@ -1,16 +1,20 @@
-<section class="content">
-  <div class="content-cta2">
-    <h2>All Events</h2>
-      </div>
-</section>
+<article class="content">
 
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
+  <div class="content-cta3">
+    <h2>All Events</h2>
+  </div>
+
+  <div class="content-form">
+  <ol class="post-list">
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post }}
+    </li>
+    {{/each}}
+  </ol>
+  </div>
+
+</article>
 
 
 

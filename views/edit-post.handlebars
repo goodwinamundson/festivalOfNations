@@ -3,7 +3,6 @@
 {{!-- MIGHT NEED TO BE EDITED --}}
 
 <article class="content">
-<!--  <a href="/dashboard"> &larr; Back to dashboard</a>-->
 <div class="content-cta">
   <h2>
     Edit Your Entry
@@ -27,48 +26,33 @@
     
     <div>
       <a href="/post/{{post.id}}">{{post.comments.length}} </a>
-      {{!-- {{format_plural "comment" post.comments.length}} --}}
+
     </div>
     <div class="editButtons">
     <button type="submit">Save Post</button>
     <button type="button" class="delete-post-btn">Delete Post</button>
     </div>
   <br>
-      <form class="comment-form">
+      <form class="comment-form" method="post">
         <label for="comment">Add a Comment</label> <br/>
         <div>
           <textarea id="commentBody" name="comment-body"></textarea>
         </div>
       <br />
         <div>
-          <button type="submit" id="commentBtn">Add Comment</button>
+          <button type="submit">Add Comment</button>
+        </div>
+        <div class="content-form">
+        {{> comments post.comments}}
         </div>
       </form>
-      {{> comments post.comments}}
-    </form>
+  </form>
 </article>
 
-{{> comments post.comments}}
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
 
 
-{{!-- <form class="comment-form" method="post">
-  <div>
-    {{!-- this is where the comment box is at for "edit post" but nothing pops up when we click on the button --}}
-    <textarea name="comment-body"></textarea>
-  </div>
-<br />
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form> }}
-
-{{> comments post.comments}}
-
->>>>>>> develop
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
+ 
