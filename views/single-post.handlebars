@@ -1,9 +1,13 @@
+<article class="content">
+  <div class="content-form">
+
 {{> post-info post}}
 
 {{#if loggedIn}}
-<form class="comment-form">
+<form>
+  <br>
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea id="commentBody" name="comment-body"></textarea>
   </div>
 
   <div>
@@ -19,3 +23,5 @@
 <script src="/javascript/edit-post.js"></script>
 
 {{/if}}
+</div>
+</article>
