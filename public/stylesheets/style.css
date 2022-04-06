@@ -86,7 +86,7 @@ header nav button:hover {
 /*content Styles*/
 
 .content {
-  background-image: url("../stylesheets/Picture7.png");
+  background-image: url("/images/Picture7.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: 80%;
@@ -127,8 +127,6 @@ header nav button:hover {
   font-size: 18px;
   line-height: 1.2;
 }
-
-
 /* content Style End */
 
 /*login form styles*/
@@ -224,10 +222,14 @@ header nav button:hover {
 /*represent a country styles End*/
 
 /*see all events styles*/
+.comment-body{
+  padding-top: 5px;
+}
+
 /*see all events styles End*/
 
 /*post styles*/
-.post-card {
+.post-card, .edit-post-form {
   border: solid 3px var(--tertiary-color);
   background-color: var(--primary-color);
   border-radius: 15px;
@@ -248,6 +250,8 @@ header nav button:hover {
 }
 /*post styles end*/
 
+/*edit-post styles*/
+/*edit-post styles End*/
 
 /*Footer styles*/
 

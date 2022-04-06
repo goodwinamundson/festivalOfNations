@@ -2,11 +2,16 @@
 
 {{!-- MIGHT NEED TO BE EDITED --}}
 
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
+<article class="content">
+<!--  <a href="/dashboard"> &larr; Back to dashboard</a>-->
+<div class="content-cta">
   <h2>
-    Edit Post
+    Edit Your Entry
   </h2>
+    <p>
+      If you would like to change or remove your entry, please use the form to the right.
+    </p>
+  </div>
   <br />
   <form class="edit-post-form">
     <div>
@@ -26,20 +31,20 @@
     </div>
     <button type="submit">Save Post</button>
     <button type="button" class="delete-post-btn">Delete Post</button>
-  </form>
+  <br>
+      <form class="comment-form">
+        <div>
+          <textarea name="comment-body"></textarea>
+        </div>
+      <br />
+        <div>
+          <button type="submit">Add Comment</button>
+        </div>
+      </form>
+
+      {{> comments post.comments}}
+    </form>
 </article>
-
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-<br />
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form>
-
-{{> comments post.comments}}
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
