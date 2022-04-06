@@ -8,7 +8,7 @@
     Edit Your Entry
   </h2>
     <p>
-      If you would like to change or remove your entry, please use this form..
+      If you would like to change or remove your entry, please use this form. See or add comments below.
     </p>
   </div>
   <br />
@@ -33,7 +33,7 @@
     <button type="button" class="delete-post-btn">Delete Post</button>
     </div>
   <br>
-      <form class="comment-form" method="post">
+      {{!-- <form class="comment-form" method="post">
         <label for="comment">Add a Comment</label> <br/>
         <div>
           <textarea id="commentBody" name="comment-body"></textarea>
@@ -45,10 +45,26 @@
         <div>
         {{> comments post.comments}}
         </div>
-      </form>
+      </form> --}}
   </form>
 </article>
+<article class="content">
+<form class="comment-form" method="post">
+  <label for="comment" class="comment1">Add a Comment</label> 
+  <br/>
+        <div>
+          <textarea id="commentBody" name="comment-body"></textarea>
+        </div>
+  <div>
+    <button type="submit">Add Comment</button>
+    <br/>
+  </div>
 
+        <div>
+        {{> comments post.comments}}
+        </div>
+        </form>
+</article>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>

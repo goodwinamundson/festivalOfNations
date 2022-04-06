@@ -1,5 +1,7 @@
     <div class="comments">
+      <ol>
       {{#each this}}
+      <li class="content-form2">
         <section class="comment">
           <div class="meta">
             {{user.username}}
@@ -10,5 +12,8 @@
             {{comment}}
           </div>
         </section>
+        </li>
+        <br>
       {{/each}}
+      </ol>
     </div>

@@ -140,6 +140,16 @@ header nav button:hover {
   width: 40%;
   margin: 3.5%;
 }
+.content-form2 {
+  border: solid 3px var(--tertiary-color);
+  background-color: rgb(200,226,238);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: var(--tertiary-color);
+  width: 90%;
+  margin: 3.5%;
+}
 
 .content-form p {
   margin: 5px 0 15px 0;
@@ -162,12 +172,12 @@ header nav button:hover {
   outline: none;
 }
 
-.content-form label, .edit-post-form label {
+.content-form label, .edit-post-form label, .comment-form label {
   margin: 0 5px;
   padding-top: 10px;
 }
 
-.content-form button, .edit-post-form button {
+.content-form button, .edit-post-form button, .comment-form button {
   color: var(--secondary-color);
   background-color: #ffffff;
   border: none;
@@ -176,7 +186,7 @@ header nav button:hover {
   font-size: 16px;
 }
 
-.content-form button:hover, .edit-post-form button:hover {
+.content-form button:hover, .edit-post-form button:hover, .comment-form button:hover {
   background-color: var(--tertiary-color);
 }
 /*login form styles end*/
@@ -227,7 +237,7 @@ header nav button:hover {
 /*see all events styles End*/
 
 /*post styles*/
-.post-card, .edit-post-form {
+.post-card, .edit-post-form, .comment-form {
   border: solid 3px var(--tertiary-color);
   background-color: var(--primary-color);
   border-radius: 15px;
@@ -235,6 +245,10 @@ header nav button:hover {
   padding: 20px;
   width: 40%;
   margin: 3.5%;
+}
+
+.comment {
+  font-weight: bold;
 }
 
 .single-post {
@@ -251,19 +265,12 @@ header nav button:hover {
 /*edit-post styles*/
 /*edit-post styles End*/
 
-.content-cta3{
-  width: 35%;
-  text-align: center;
-  margin: 3.5%;
-  color: var(--tertiary-color);
-  font-size: 18px;
-  line-height: 1.2;
-}
 
-.content-cta3 h2 {
+
+.comment1 {
   font-style: italic;
-  font-size: 40px;
-  padding: 0 90px;
+  font-weight: bold;
+  font-size: 30px;
   color: var(--tertiary-color);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }   
