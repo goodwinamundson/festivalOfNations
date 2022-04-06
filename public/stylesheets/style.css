@@ -355,6 +355,7 @@ footer img {
   .content-cta2 h2 {
     text-align: center;
     width: 100%;
+    padding: 20px 0px;
   }
 
   .content h2 {
@@ -362,6 +363,7 @@ footer img {
   }
 
   .content-cta2 p {
+    padding: 0px 0px;
     justify-content: center;
     text-align: center;
     width: 100%;
@@ -377,6 +379,14 @@ footer img {
   }
 
   .single-post {
+    width: 100%;
+  }
+
+  .edit-post-form {
+    width: 100%;
+  }
+
+  .comment-form {
     width: 100%;
   }
 
