@@ -4,9 +4,10 @@
       <li class="content-form2">
         <section class="comment">
           <div class="meta">
-            {{user.username}}
+            {{> comments post.comments}}
+            {{!-- {{user.username}}
             on
-            {{format_date created_at}}
+            {{format_date created_at}} --}}
           </div>
           <div class="text">
             {{comment}}

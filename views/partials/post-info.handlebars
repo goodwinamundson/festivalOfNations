@@ -1,19 +1,25 @@
 <article class="post">
   <div class="country">
-    {{! DELETE? post_url used to be here? this target type might be incorrect? }}
-    <div target="_blank">{{country_name}}</div>
+    {{!-- <div target="_blank">{{country_name}}</div> --}}
 
   </div>
-  {{! need a tutor's help for this! }}
   <div class="meta">
-    {{country_name}}
-    {{location}}
-    {{description}}
-    {{user.username}}
-    on
+    {{country_name}} |
+    {{location}} |
+    <br />
+    {{description}} |
+    <br />
+    {{username}}
+    created on:
     {{format_date created_at}}
     |
     <a href="/post/{{id}}">{{comments.length}}
       {{format_plural "comment" comments.length}}</a>
+      
+      
   </div>
+  <div method="post">
+   {{> comments post.comments}}  
+  </div>
+ 
 </article>

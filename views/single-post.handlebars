@@ -10,18 +10,23 @@
     <textarea id="commentBody" name="comment-body"></textarea>
   </div>
 
-  <div>
-    <button type="submit">add comment</button>
+  <div method="post">
+    <button class="text" type="submit">add comment</button>
   </div>
 </form>
-{{/if}}
 
-{{> comments post.comments}}
+  <div class="text">
+            {{comment}}
+ {{> comments post.comments}}           
+          </div>
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-<script src="/javascript/edit-post.js"></script>
-
-{{/if}}
 </div>
 </article>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
+
+{{/if}}
