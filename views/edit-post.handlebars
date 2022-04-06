@@ -48,9 +48,14 @@
     </form>
 </article>
 
-<<<<<<< HEAD
-=======
-<form class="comment-form" method="post">
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
+
+
+{{!-- <form class="comment-form" method="post">
   <div>
     {{!-- this is where the comment box is at for "edit post" but nothing pops up when we click on the button --}}
     <textarea name="comment-body"></textarea>
@@ -59,7 +64,7 @@
   <div>
     <button type="submit">Add Comment</button>
   </div>
-</form>
+</form> }}
 
 {{> comments post.comments}}
 
