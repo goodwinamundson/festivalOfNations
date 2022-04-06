@@ -49,9 +49,13 @@
 
   Once a user arrives at the landing page they will be able to sign up or log in to their account. They will then receive an email welcoming them to Festival of Nations. From there they will be redirected to a page where they will be able to create a post selecting there Protolabs campus, country they are representing and leaving a brief description. If they do not wish to create a post the user can click 'See All Events' where they can view and comment on all the posts from other users.
   
- 
+ Sign up page
 ![Sign up page](./views/images/sign-up.png)
+
+Create post page
 ![Create Post](./views/images/create-post.png)
+
+Dashboard Page
 ![Dashboard Page](./views/images/dashboard.png)
 
   ## Technology
