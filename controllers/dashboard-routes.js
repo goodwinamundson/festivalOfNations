@@ -78,15 +78,15 @@ router.get("/edit/:id", (req, res) => {
     attributes: [
       "id",
       "user_id",
-      "username",
       "created_at",
       "country_name",
       "location",
+      "description",
     ],
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment", "post_id", "username", "created_at"],
+        attributes: ["id", "comment", "post_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -96,16 +96,16 @@ router.get("/edit/:id", (req, res) => {
         model: User,
         attributes: ["username"],
       },
-      {
-        model: Country,
-        attributes: ["country_name"],
-      },
+      // {
+      //   model: Country,
+      //   attributes: ["country_name"],
+      // },
     ],
   })
     .then((dbPostData) => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
-
+        console.log(post);
         res.render("edit-post", {
           post,
           loggedIn: true,
@@ -113,6 +113,62 @@ router.get("/edit/:id", (req, res) => {
       } else {
         res.status(404).end();
       }
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+router.post("/edit/:id", (req, res) => {
+  Comment.create({
+    comment: req.body["comment-body"],
+    user_id: req.session.user_id,
+    post_id: req.params.id,
+  })
+    .then(() => {
+      Post.findByPk(req.params.id, {
+        attributes: [
+          "id",
+          "user_id",
+          "created_at",
+          "country_name",
+          "location",
+          "description",
+        ],
+        include: [
+          {
+            model: Comment,
+            attributes: ["id", "comment", "post_id", "created_at"],
+            include: {
+              model: User,
+              attributes: ["username"],
+            },
+          },
+          {
+            model: User,
+            attributes: ["username"],
+          },
+          // {
+          //   model: Country,
+          //   attributes: ["country_name"],
+          // },
+        ],
+      })
+        .then((dbPostData) => {
+          if (dbPostData) {
+            const post = dbPostData.get({ plain: true });
+            //console.log(post);
+            res.render("edit-post", {
+              post,
+              loggedIn: true,
+            });
+          } else {
+            res.status(404).end();
+          }
+        })
+        .catch((err) => {
+          res.status(500).json(err);
+        });
     })
     .catch((err) => {
       res.status(500).json(err);

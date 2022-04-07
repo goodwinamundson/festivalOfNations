@@ -67,8 +67,6 @@ header nav a {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-
-
 header nav a:hover {
   background: var(--primary-color);
   color: var(--secondary-color);
@@ -86,7 +84,7 @@ header nav button:hover {
 /*content Styles*/
 
 .content {
-  background-image: url("../stylesheets/Picture7.png");
+  background-image: url("/images/Picture7.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: 80%;
@@ -102,15 +100,14 @@ header nav button:hover {
   padding: 0 90px;
   color: var(--tertiary-color);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}   
-  
-.content-cta h2 {
-    font-style: italic;
-    font-size: 55px;
-    color: var(--tertiary-color);
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.content-cta h2 {
+  font-style: italic;
+  font-size: 55px;
+  color: var(--tertiary-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
 .content-cta2 p {
   font-style: italic;
@@ -127,8 +124,6 @@ header nav button:hover {
   font-size: 18px;
   line-height: 1.2;
 }
-
-
 /* content Style End */
 
 /*login form styles*/
@@ -142,12 +137,24 @@ header nav button:hover {
   width: 40%;
   margin: 3.5%;
 }
+.content-form2 {
+  border: solid 3px var(--tertiary-color);
+  background-color: rgb(200, 226, 238);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: var(--tertiary-color);
+  width: 90%;
+  margin: 3.5%;
+}
 
 .content-form p {
   margin: 5px 0 15px 0;
 }
 
-.form-input {
+.form-input,
+#description,
+#commentBody {
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   display: block;
@@ -164,12 +171,16 @@ header nav button:hover {
   outline: none;
 }
 
-.content-form label {
+.content-form label,
+.edit-post-form label,
+.comment-form label {
   margin: 0 5px;
   padding-top: 10px;
 }
 
-.content-form button {
+.content-form button,
+.edit-post-form button,
+.comment-form button {
   color: var(--secondary-color);
   background-color: #ffffff;
   border: none;
@@ -178,7 +189,9 @@ header nav button:hover {
   font-size: 16px;
 }
 
-.content-form button:hover {
+.content-form button:hover,
+.edit-post-form button:hover,
+.comment-form button:hover {
   background-color: var(--tertiary-color);
 }
 /*login form styles end*/
@@ -224,10 +237,13 @@ header nav button:hover {
 /*represent a country styles End*/
 
 /*see all events styles*/
+
 /*see all events styles End*/
 
 /*post styles*/
-.post-card {
+.post-card,
+.edit-post-form,
+.comment-form {
   border: solid 3px var(--tertiary-color);
   background-color: var(--primary-color);
   border-radius: 15px;
@@ -237,9 +253,13 @@ header nav button:hover {
   margin: 3.5%;
 }
 
+.comment {
+  font-weight: bold;
+}
+
 .single-post {
   border: solid 3px var(--tertiary-color);
-  background-color: rgb(200,226,238);
+  background-color: rgb(200, 226, 238);
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -248,14 +268,24 @@ header nav button:hover {
 }
 /*post styles end*/
 
+/*edit-post styles*/
+/*edit-post styles End*/
+
+.comment1 {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--tertiary-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
 /*Footer styles*/
 
 footer {
   background-color: var(--tertiary-color);
-  position:relative;
+  position: relative;
   width: 100%;
-  bottom:0;
+  bottom: 0;
 }
 
 footer img {
@@ -273,4 +303,150 @@ footer img {
   color: var(--primary-color);
 }
 
+/* -----------Media Queries---------------
+    /*-----------------------------------------------
+    /*-----------------------------------------------
+    
+    
+    
+    /* Media Query for Smaller Desktop Screens and Smaller */
+@media screen and (max-width: 980px) {
+  header {
+    padding-bottom: 0;
+    justify-content: center;
+    position: relative;
+  }
 
+  header h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav a {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    font-size: 30px;
+  }
+
+  nav {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #logout {
+    font-weight: lighter;
+    font-size: 8.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .content-cta,
+  .content-cta2,
+  .content-form,
+  .login-form {
+    width: 100%;
+  }
+
+  .btn-no-style {
+    justify-content: center;
+  }
+
+  .content-cta2 h2 {
+    text-align: center;
+    width: 100%;
+    padding: 20px 0px;
+  }
+
+  .content h2 {
+    margin-top: -75px;
+  }
+
+  .content-cta2 p {
+    padding: 0px 0px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .content-cta,
+  .content-cta2 {
+    text-align: center;
+  }
+
+  .post-card {
+    width: 100%;
+  }
+
+  .single-post {
+    width: 100%;
+  }
+
+  .edit-post-form {
+    width: 100%;
+  }
+
+  .comment-form {
+    width: 100%;
+  }
+
+  footer h2,
+  footer div {
+    text-align: center;
+    width: 100%;
+  }
+
+  .content-cta,
+  .content-cta2 .form-input {
+    width: 100%;
+  }
+
+  .content-cta2,
+  .form-input {
+    width: 100%;
+  }
+}
+
+/* Media Query for tablets and smaller */
+@media screen and (max-width: 768px) {
+  section {
+    padding: 30px 15px;
+  }
+
+  .step h3 {
+    flex: 1 100%;
+    text-align: center;
+  }
+
+  .step-info {
+    flex: 2 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .step-img {
+    flex: 0 32%;
+    margin-right: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .step-text {
+    flex: 100%;
+  }
+}
+
+/* Media Query for tablets and smaller */
+@media screen and (max-width: 575px) {
+  .content-form button {
+    width: 100%;
+  }
+
+  .section-title {
+    width: 95%;
+  }
+
+  .into p {
+    width: 100%;
+  }
+}

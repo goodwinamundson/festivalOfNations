@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Post, User, Comment, Country } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+//** this route isn't working? */
 // get all users
 router.get("/", (req, res) => {
   Post.findAll({
@@ -16,7 +17,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "comment", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -40,6 +41,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
+  console.log("DO I GET HERE AT ALL!?");
   Post.findOne({
     where: {
       id: req.params.id,
@@ -55,7 +57,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "comment", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -72,7 +74,8 @@ router.get("/:id", (req, res) => {
         res.status(404).json({ message: "No post found with this id" });
         return;
       }
-      res.json(dbPostData);
+      res.render("post", { dbPostData });
+      //res.json(dbPostData);
     })
     .catch((err) => {
       console.log(err);
@@ -83,7 +86,6 @@ router.get("/:id", (req, res) => {
 router.post("/", withAuth, (req, res) => {
   Post.create({
     description: req.body.description,
-    //post_url: req.body.post_url,
     user_id: req.session.user_id,
     username: req.session.username,
     country_name: req.body.country_name,
@@ -97,9 +99,12 @@ router.post("/", withAuth, (req, res) => {
 });
 
 router.put("/:id", withAuth, (req, res) => {
+  console.log(req.body);
   Post.update(
     {
-      title: req.body.title,
+      country_name: req.body.country,
+      location: req.body.location,
+      description: req.body.description,
     },
     {
       where: {
@@ -112,6 +117,7 @@ router.put("/:id", withAuth, (req, res) => {
         res.status(404).json({ message: "Sorry, no post found with this id" });
         return;
       }
+      console.log(dbPostData);
       res.json(dbPostData);
     })
     .catch((err) => {

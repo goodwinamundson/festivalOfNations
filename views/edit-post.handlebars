@@ -1,37 +1,69 @@
-{{! originally single-claim-post: ALL THE ORIGINAL CODE WAS MOVED TO DASHBOARD.HANDLEBARS }}
-
-{{!-- MIGHT NEED TO BE EDITED --}}
-
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
+<article class="content">
+<div class="content-cta">
   <h2>
-    Edit Post
+    Edit Your Entry
   </h2>
+    <p>
+      If you would like to change or remove your entry, please use this form. See or add comments below.
+    </p>
+  </div>
+  <br />
   <form class="edit-post-form">
     <div>
       <label for="country">Country</label>
-      <input type="country" id="country" name="country" value="{{post.country}}" />
+      <input type="text" id="country" name="country" value="{{post.country_name}}" />
+      <br/>
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" value="{{post.location}}" />
+      <br/>
+      <label for="description">Description</label> <br/>
+      <textarea id="description">{{post.description}}</textarea>
     </div>
+    
     <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a href="/post/{{post.id}}">{{post.comments.length}} </a>
+
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <div class="editButtons">
+    <button type="submit">Save Post</button>
+    <button type="button" class="delete-post-btn">Delete Post</button>
+    </div>
+  <br>
+      {{!-- <form class="comment-form" method="post">
+        <label for="comment">Add a Comment</label> <br/>
+        <div>
+          <textarea id="commentBody" name="comment-body"></textarea>
+        </div>
+      <br />
+        <div>
+          <button type="submit">Add Comment</button>
+        </div>
+        <div>
+        {{> comments post.comments}}
+        </div>
+      </form> --}}
   </form>
 </article>
-
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
+<article class="content">
+<form class="comment-form" method="post">
+  <label for="comment" class="comment1">Add a Comment</label> 
+  <br/>
+        <div>
+          <textarea id="commentBody" name="comment-body"></textarea>
+        </div>
   <div>
     <button type="submit">Add Comment</button>
+    <br/>
   </div>
-</form>
 
-{{> comments post.comments}}
+        <div>
+        {{> comments post.comments}}
+        </div>
+        </form>
+</article>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
+
+

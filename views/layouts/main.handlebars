@@ -13,9 +13,11 @@
         <h1>Festival of Nations</h1>
         <nav>
           {{#if loggedIn}}
-            <a id="logout" class="button">logout</a>
-            <a href="/dashboard">See All Events</a>
-            <a href="/login">login</a>
+
+            <a href="/login">Home</a>
+            <a href="/events">See All Events</a>
+            <a href="/dashboard">Dashboard</a>
+            <a id="logout" class="button">Logout</a>
           {{else}}
 
           {{/if}}
@@ -27,7 +29,7 @@
       </main>
       <footer>
         <a href="https://www.protolabs.com/" target="_blank">
-          <img src="Picture1.png" alt="Protolabs" />
+          <img src="/images/Picture1.png" alt="Protolabs" />
         </a>
         <div class="footerEmail">
           <a href="mailto: deileadershipcouncil@protolabs.com">Contact Us</a>
