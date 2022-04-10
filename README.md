@@ -45,7 +45,7 @@
 
 
   ## Usage 
-  To run the program just type npm start in the command line and then navigate to localhost:3030 in your browser or simply visit the live website [here](https://dashboard.heroku.com/auth/heroku/callback?code=54061cc7-68e5-41d8-bba1-d8f80a5abc24&state=02b0a20f563a9c1821a47ba81cc5b21ded02716ded2ac1fbc5c4add119910c02). 
+  To run the program just type npm start in the command line and then navigate to localhost:3030 in your browser or simply visit the live website [here](https://powerful-mesa-61465.herokuapp.com/). 
 
   Once a user arrives at the landing page they will be able to sign up or log in to their account. They will then receive an email welcoming them to Festival of Nations. From there they will be redirected to a page where they will be able to create a post selecting there Protolabs campus, country they are representing and leaving a brief description. If they do not wish to create a post the user can click 'See All Events' where they can view and comment on all the posts from other users.
   
